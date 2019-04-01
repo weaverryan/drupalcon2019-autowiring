@@ -1,4 +1,4 @@
-# DrupalCon Training! D8 & Symfony: Dive Into the Core Concepts that Make Each Fly 
+# DrupalCon Training! Diving into Modern Drupal: Symfony, Composer, Services, Events & More
 
 Hi friends! This repository contains an empty Drupal 8.6 site that you'll
 need to install before coming to the training.
