@@ -77,7 +77,7 @@ in your browser to access it.
 ## 5) Install the Drupal Site
 
 Finally, make sure you've gone through the Drupal site install
-process. You can do this however you want, for example:
+process, doing a "Standard" install. You can do this however you want, for example:
 
 A) You can go to `http://localhost:8000` and install via the web interface
 
