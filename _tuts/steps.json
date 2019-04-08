@@ -11,6 +11,11 @@
             "description": null
         },
         {
+            "id": "service-id-use-class",
+            "name": "Service Id: use ::class",
+            "description": null
+        },
+        {
             "id": "service-id-omit-class",
             "name": "Service Id: omit class",
             "description": null
@@ -51,5 +56,5 @@
             "description": null
         }
     ],
-    "sha": "5a55060088d4e47fddbce055d159308266c98d07"
+    "sha": "419efa275d951413fc3d6d35d34bb0052e227f6c"
 }
