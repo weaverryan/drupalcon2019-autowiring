@@ -1,0 +1,47 @@
+diff --git a/modules/custom/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+index 5da648e3..37f1de2d 100644
+--- a/modules/custom/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+@@ -5,8 +5,3 @@ services:
+ #  _defaults:
+ #    autowire: true
+ 
+-  Drupal\coffee_shop\Service\Barista:
+-    arguments: ['@config.factory']
+-
+-  Drupal\coffee_shop\Service\CoffeeMachine:
+-    arguments: []
+diff --git a/modules/custom/custom/coffee_shop/src/CoffeeShopServiceProvider.php b/modules/custom/custom/coffee_shop/src/CoffeeShopServiceProvider.php
+index 67e18214..4d9254aa 100644
+--- a/modules/custom/custom/coffee_shop/src/CoffeeShopServiceProvider.php
++++ b/modules/custom/custom/coffee_shop/src/CoffeeShopServiceProvider.php
+@@ -4,15 +4,26 @@
+ 
+ use Drupal\Core\DependencyInjection\ContainerBuilder;
+ use Drupal\Core\DependencyInjection\ServiceProviderInterface;
++use Symfony\Component\DependencyInjection\Definition;
++use Symfony\Component\Finder\Finder;
+ 
+ class CoffeeShopServiceProvider implements ServiceProviderInterface {
+   public function register(ContainerBuilder $container) {
+-    foreach ($container->getDefinitions() as $id => $definition) {
+-      if (strpos($id, 'Drupal\\coffee_shop') !== 0) {
++    $finder = new Finder();
++    $finder->in(__DIR__.'/Service')
++      ->files()
++      ->name('*.php');
++
++    foreach ($finder as $fileInfo) {
++      $class = 'Drupal\coffee_shop\Service\\'.substr($fileInfo->getFilename(), 0, -4);
++      // don't override any existing service
++      if ($container->hasDefinition($class)) {
+         continue;
+       }
+ 
++      $definition = new Definition($class);
+       $definition->setAutowired(true);
++      $container->setDefinition($class, $definition);
+     }
+   }
+ }
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/modules/custom/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+index ecc228e7..271f5028 100644
+--- a/modules/custom/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+@@ -1,6 +1,7 @@
+ services:
+   Drupal\coffee_shop\Service\Barista:
+-    arguments: ['@config.factory', '@Drupal\coffee_shop\Service\CoffeeMachine']
++    arguments: ['@config.factory']
++    autowire: true
+ 
+   Drupal\coffee_shop\Service\CoffeeMachine:
+     arguments: []

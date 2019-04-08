@@ -1,0 +1,31 @@
+diff --git a/modules/custom/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+index 37f1de2d..31a8485f 100644
+--- a/modules/custom/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+@@ -5,3 +5,6 @@ services:
+ #  _defaults:
+ #    autowire: true
+ 
++  Drupal\coffee_shop\Service\CoffeeMachine:
++    arguments:
++      $numberOfScoops: 3
+diff --git a/modules/custom/custom/coffee_shop/src/Service/CoffeeMachine.php b/modules/custom/custom/coffee_shop/src/Service/CoffeeMachine.php
+index da26f7ce..c7ed42fc 100644
+--- a/modules/custom/custom/coffee_shop/src/Service/CoffeeMachine.php
++++ b/modules/custom/custom/coffee_shop/src/Service/CoffeeMachine.php
+@@ -3,8 +3,14 @@
+ namespace Drupal\coffee_shop\Service;
+ 
+ class CoffeeMachine {
++  private $numberOfScoops;
++
++  public function __construct(int $numberOfScoops) {
++    $this->numberOfScoops = $numberOfScoops;
++  }
++
+   public function brew()
+   {
+-    return 'coffee brewed!';
++    return sprintf('coffee brewed using %d scoops!', $this->numberOfScoops);
+   }
+ }

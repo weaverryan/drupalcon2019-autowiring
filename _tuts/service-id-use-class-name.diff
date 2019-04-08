@@ -1,0 +1,23 @@
+diff --git a/modules/custom/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+index 19adc132..4836a3ff 100644
+--- a/modules/custom/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+@@ -1,4 +1,4 @@
+ services:
+-  coffee_shop.barista:
++  Drupal\coffee_shop\Service\Barista:
+     class: Drupal\coffee_shop\Service\Barista
+     arguments: ['@config.factory']
+diff --git a/modules/custom/custom/coffee_shop/src/Controller/CoffeeController.php b/modules/custom/custom/coffee_shop/src/Controller/CoffeeController.php
+index 76b5455d..d436b0ff 100644
+--- a/modules/custom/custom/coffee_shop/src/Controller/CoffeeController.php
++++ b/modules/custom/custom/coffee_shop/src/Controller/CoffeeController.php
+@@ -5,7 +5,7 @@
+ class CoffeeController {
+   public function brewCoffee($type) {
+     $barista =  \Drupal::getContainer()
+-      ->get('coffee_shop.barista');
++      ->get('Drupal\coffee_shop\Service\Barista');
+     $text = $barista->prepareDrink($type);
+ 
+     return [

@@ -1,0 +1,11 @@
+diff --git a/modules/custom/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+index f6e5ec8f..6c92a1ac 100644
+--- a/modules/custom/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
+@@ -11,3 +11,6 @@ services:
+   Drupal\coffee_shop\Service\CoffeeMachine:
+     arguments:
+       $numberOfScoops: 3
++
++  Drupal\Core\Config\ConfigFactoryInterface:
++    alias: 'config.factory'
