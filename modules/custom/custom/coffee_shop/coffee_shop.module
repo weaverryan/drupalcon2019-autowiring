@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains coffee_shop.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function coffee_shop_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the coffee_shop module.
+    case 'help.page.coffee_shop':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Mmmmmm Coffee...') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function coffee_shop_theme() {
+  return [
+    'coffee_shop' => [
+      'render element' => 'children',
+    ],
+  ];
+}

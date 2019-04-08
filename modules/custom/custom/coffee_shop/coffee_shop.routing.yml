@@ -1,0 +1,8 @@
+coffee_shop.coffee.brew:
+  path: /coffee/brew/{type}
+  defaults:
+    _controller: Drupal\coffee_shop\Controller\CoffeeController::brewCoffee
+    type: coffee
+    _title: 'Brew some coffee!'
+  requirements:
+    _permission: 'access content'

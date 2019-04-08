@@ -1,0 +1,14 @@
+{
+  "name": "drupal/coffee_shop",
+  "type": "drupal-module",
+  "description": "Mmmmmm Coffee...",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/coffee_shop",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/coffee_shop",
+    "source": "http://cgit.drupalcode.org/coffee_shop"
+  },
+  "require": { }
+}
