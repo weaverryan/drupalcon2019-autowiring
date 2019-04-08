@@ -4,7 +4,9 @@ namespace Drupal\coffee_shop\Controller;
 
 class CoffeeController {
   public function brewCoffee($type) {
-    $text = sprintf('Ding! Your delicious %s is ready!', $type);
+    $barista =  \Drupal::getContainer()
+      ->get('coffee_shop.barista');
+    $text = $barista->prepareDrink($type);
 
     return [
       '#type' => 'markup',

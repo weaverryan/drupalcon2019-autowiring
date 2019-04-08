@@ -1,0 +1,4 @@
+services:
+  coffee_shop.barista:
+    class: Drupal\coffee_shop\Service\Barista
+    arguments: []
