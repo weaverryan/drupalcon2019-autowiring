@@ -1,0 +1,10 @@
+diff --git a/modules/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/coffee_shop/coffee_shop.services.yml
+index e233c645..19adc132 100644
+--- a/modules/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/coffee_shop/coffee_shop.services.yml
+@@ -1,4 +1,4 @@
+ services:
+   coffee_shop.barista:
+     class: Drupal\coffee_shop\Service\Barista
+-    arguments: []
++    arguments: ['@config.factory']

@@ -1,0 +1,21 @@
+diff --git a/modules/custom/coffee_shop/src/Service/Barista.php b/modules/custom/coffee_shop/src/Service/Barista.php
+index ae07b91c..3b54741f 100644
+--- a/modules/custom/coffee_shop/src/Service/Barista.php
++++ b/modules/custom/coffee_shop/src/Service/Barista.php
+@@ -3,9 +3,15 @@
+ namespace Drupal\coffee_shop\Service;
+ 
+ class Barista {
++  private $configFactory;
++
++  public function __construct($configFactory) {
++    $this->configFactory = $configFactory;
++  }
++
+   public function prepareDrink($type = null) {
+     if ($type === null) {
+-      $type = $this->config('coffee_shop.default')
++      $type = $this->configFactory->get('coffee_shop.default')
+         ->get('type');
+     }
+ 

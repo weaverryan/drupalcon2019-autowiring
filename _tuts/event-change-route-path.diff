@@ -1,0 +1,13 @@
+diff --git a/modules/custom/coffee_shop/src/Routing/RouteSubscriber.php b/modules/custom/coffee_shop/src/Routing/RouteSubscriber.php
+index bc177089..d09dd699 100644
+--- a/modules/custom/coffee_shop/src/Routing/RouteSubscriber.php
++++ b/modules/custom/coffee_shop/src/Routing/RouteSubscriber.php
+@@ -16,5 +16,8 @@ class RouteSubscriber extends RouteSubscriberBase {
+    * {@inheritdoc}
+    */
+   protected function alterRoutes(RouteCollection $collection) {
++    // change the route path, just to show we're powerful!
++    $collection->get('coffee_shop.coffee.brew')
++      ->setPath('/seattle/coffee/brew/{type}');
+   }
+ }

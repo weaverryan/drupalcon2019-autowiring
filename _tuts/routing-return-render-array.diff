@@ -1,0 +1,21 @@
+diff --git a/modules/custom/coffee_shop/src/Controller/CoffeeController.php b/modules/custom/coffee_shop/src/Controller/CoffeeController.php
+index c06a608b..21b2973d 100644
+--- a/modules/custom/coffee_shop/src/Controller/CoffeeController.php
++++ b/modules/custom/coffee_shop/src/Controller/CoffeeController.php
+@@ -2,10 +2,13 @@
+ 
+ namespace Drupal\coffee_shop\Controller;
+ 
+-use Symfony\Component\HttpFoundation\Response;
+-
+ class CoffeeController {
+   public function brewCoffee($type) {
+-    return new Response(sprintf('Ding! Your delicious %s is ready!', $type));
++    $text = sprintf('Ding! Your delicious %s is ready!', $type);
++
++    return [
++      '#type' => 'markup',
++      '#markup' => $text,
++    ];
+   }
+ }

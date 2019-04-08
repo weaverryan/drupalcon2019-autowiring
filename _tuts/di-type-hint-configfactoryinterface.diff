@@ -1,0 +1,18 @@
+diff --git a/modules/custom/coffee_shop/src/Service/Barista.php b/modules/custom/coffee_shop/src/Service/Barista.php
+index 3b54741f..f222f838 100644
+--- a/modules/custom/coffee_shop/src/Service/Barista.php
++++ b/modules/custom/coffee_shop/src/Service/Barista.php
+@@ -2,10 +2,12 @@
+ 
+ namespace Drupal\coffee_shop\Service;
+ 
++use Drupal\Core\Config\ConfigFactoryInterface;
++
+ class Barista {
+   private $configFactory;
+ 
+-  public function __construct($configFactory) {
++  public function __construct(ConfigFactoryInterface $configFactory) {
+     $this->configFactory = $configFactory;
+   }
+ 

@@ -1,0 +1,33 @@
+diff --git a/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php b/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php
+new file mode 100644
+index 00000000..77c16fb3
+--- /dev/null
++++ b/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php
+@@ -0,0 +1,27 @@
++<?php
++
++namespace Drupal\coffee_shop\Plugin\Block;
++
++use Drupal\Core\Block\BlockBase;
++
++/**
++ * Provides a 'CoffeeBlock' block.
++ *
++ * @Block(
++ *  id = "coffee_block",
++ *  admin_label = @Translation("Coffee block"),
++ * )
++ */
++class CoffeeBlock extends BlockBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function build() {
++    $build = [];
++    $build['coffee_block']['#markup'] = 'Implement CoffeeBlock.';
++
++    return $build;
++  }
++
++}

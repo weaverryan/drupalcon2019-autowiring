@@ -1,0 +1,155 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "module-generate-it",
+            "name": "Module: Generate it",
+            "description": null
+        },
+        {
+            "id": "routes-add-route-only",
+            "name": "Routes: Add route only",
+            "description": null
+        },
+        {
+            "id": "routing-add-controller-controller",
+            "name": "Routing: Add controller + _controller",
+            "description": null
+        },
+        {
+            "id": "routing-add-wildcard",
+            "name": "Routing: Add Wildcard",
+            "description": null
+        },
+        {
+            "id": "routing-give-wildcard-default",
+            "name": "Routing: Give wildcard default",
+            "description": null
+        },
+        {
+            "id": "routing-return-render-array",
+            "name": "Routing: Return render array",
+            "description": null
+        },
+        {
+            "id": "routing-add-title",
+            "name": "Routing: Add _title",
+            "description": null
+        },
+        {
+            "id": "service-generate-config-form",
+            "name": "Service: Generate config form",
+            "description": null
+        },
+        {
+            "id": "service-use-config-controller-shortcut",
+            "name": "Service: Use config() controller shortcut",
+            "description": null
+        },
+        {
+            "id": "service-create-use-songgenerator",
+            "name": "Service: Create & use SongGenerator",
+            "description": null
+        },
+        {
+            "id": "service-register-as-service",
+            "name": "Service: Register as service",
+            "description": null
+        },
+        {
+            "id": "di-copy-in-config-line",
+            "name": "DI: Copy in config() line",
+            "description": null
+        },
+        {
+            "id": "di-use-di-for-configfactory",
+            "name": "DI: Use DI for ConfigFactory",
+            "description": null
+        },
+        {
+            "id": "di-update-services-yml-arg",
+            "name": "DI: Update services.yml arg",
+            "description": null
+        },
+        {
+            "id": "di-type-hint-configfactoryinterface",
+            "name": "DI: Type-hint ConfigFactoryInterface",
+            "description": null
+        },
+        {
+            "id": "profiler-add-drupal-devel",
+            "name": "Profiler: Add drupal\/devel",
+            "description": null
+        },
+        {
+            "id": "profiler-ignore-contrib-modules",
+            "name": "Profiler: ignore contrib modules",
+            "description": null
+        },
+        {
+            "id": "event-create-empty-subscriber-class",
+            "name": "Event: Create empty subscriber class",
+            "description": null
+        },
+        {
+            "id": "event-fill-in-onkernelrequest",
+            "name": "Event: Fill in onKernelRequest",
+            "description": null
+        },
+        {
+            "id": "event-tag-the-service",
+            "name": "Event: Tag the service",
+            "description": null
+        },
+        {
+            "id": "event-inject-messenger",
+            "name": "Event: Inject Messenger",
+            "description": null
+        },
+        {
+            "id": "event-ec-add-duration-as-header",
+            "name": "Event: EC add duration as header",
+            "description": null
+        },
+        {
+            "id": "event-generate-route-subscriber",
+            "name": "Event: Generate route subscriber",
+            "description": null
+        },
+        {
+            "id": "event-change-route-path",
+            "name": "Event: Change route path",
+            "description": null
+        },
+        {
+            "id": "plugin-generate-block-plugin",
+            "name": "Plugin: Generate block plugin",
+            "description": null
+        },
+        {
+            "id": "plugin-use-song-generator-in-plugin",
+            "name": "Plugin: Use song generator in plugin",
+            "description": null
+        },
+        {
+            "id": "plugin-implement-containerfactoryplugininterface",
+            "name": "Plugin: Implement ContainerFactoryPluginInterface",
+            "description": null
+        },
+        {
+            "id": "plugin-override-constructor",
+            "name": "Plugin: Override constructor",
+            "description": null
+        },
+        {
+            "id": "plugin-use-proper-di",
+            "name": "Plugin: Use proper DI",
+            "description": null
+        }
+    ],
+    "sha": "20acc29f7e160229fb9481159af5d65a7b38e593"
+}

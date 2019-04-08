@@ -1,0 +1,46 @@
+diff --git a/modules/custom/coffee_shop/src/Controller/CoffeeController.php b/modules/custom/coffee_shop/src/Controller/CoffeeController.php
+index d90d1f64..3943e4ce 100644
+--- a/modules/custom/coffee_shop/src/Controller/CoffeeController.php
++++ b/modules/custom/coffee_shop/src/Controller/CoffeeController.php
+@@ -2,6 +2,7 @@
+ 
+ namespace Drupal\coffee_shop\Controller;
+ 
++use Drupal\coffee_shop\Service\Barista;
+ use Drupal\Core\Controller\ControllerBase;
+ 
+ class CoffeeController extends ControllerBase {
+@@ -11,7 +12,8 @@ public function brewCoffee($type) {
+         ->get('type');
+     }
+ 
+-    $text = sprintf('Ding! Your delicious %s is ready!', $type);
++    $barista = new Barista();
++    $text = $barista->prepareDrink($type);
+ 
+     return [
+       '#type' => 'markup',
+diff --git a/modules/custom/coffee_shop/src/Service/Barista.php b/modules/custom/coffee_shop/src/Service/Barista.php
+new file mode 100644
+index 00000000..8ada2a9c
+--- /dev/null
++++ b/modules/custom/coffee_shop/src/Service/Barista.php
+@@ -0,0 +1,18 @@
++<?php
++
++namespace Drupal\coffee_shop\Service;
++
++class Barista {
++  public function prepareDrink($type) {
++    $sizes = ['small', 'medium', 'large', 'scary huge'];
++    $statuses = ['for here', 'to go', 'to sip while standing pensively'];
++
++    $template = 'A %size% %type% prepared %status%. Enjoy!';
++
++    return strtr($template, [
++      '%size%' => $sizes[array_rand($sizes)],
++      '%type%' => $type,
++      '%status%' => $statuses[array_rand($statuses)],
++    ]);
++  }
++}

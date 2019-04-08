@@ -1,0 +1,132 @@
+diff --git a/modules/custom/coffee_shop/coffee_shop.info.yml b/modules/custom/coffee_shop/coffee_shop.info.yml
+new file mode 100644
+index 00000000..a8b46b2c
+--- /dev/null
++++ b/modules/custom/coffee_shop/coffee_shop.info.yml
+@@ -0,0 +1,5 @@
++name: 'Coffee Shop'
++type: module
++description: 'Mmmmmm Coffee...'
++core: 8.x
++package: 'Custom'
+diff --git a/modules/custom/coffee_shop/coffee_shop.module b/modules/custom/coffee_shop/coffee_shop.module
+new file mode 100644
+index 00000000..483d99b5
+--- /dev/null
++++ b/modules/custom/coffee_shop/coffee_shop.module
+@@ -0,0 +1,35 @@
++<?php
++
++/**
++ * @file
++ * Contains coffee_shop.module.
++ */
++
++use Drupal\Core\Routing\RouteMatchInterface;
++
++/**
++ * Implements hook_help().
++ */
++function coffee_shop_help($route_name, RouteMatchInterface $route_match) {
++  switch ($route_name) {
++    // Main module help for the coffee_shop module.
++    case 'help.page.coffee_shop':
++      $output = '';
++      $output .= '<h3>' . t('About') . '</h3>';
++      $output .= '<p>' . t('Mmmmmm Coffee...') . '</p>';
++      return $output;
++
++    default:
++  }
++}
++
++/**
++ * Implements hook_theme().
++ */
++function coffee_shop_theme() {
++  return [
++    'coffee_shop' => [
++      'render element' => 'children',
++    ],
++  ];
++}
+diff --git a/modules/custom/coffee_shop/composer.json b/modules/custom/coffee_shop/composer.json
+new file mode 100644
+index 00000000..2e9f77b7
+--- /dev/null
++++ b/modules/custom/coffee_shop/composer.json
+@@ -0,0 +1,14 @@
++{
++  "name": "drupal/coffee_shop",
++  "type": "drupal-module",
++  "description": "Mmmmmm Coffee...",
++  "keywords": ["Drupal"],
++  "license": "GPL-2.0+",
++  "homepage": "https://www.drupal.org/project/coffee_shop",
++  "minimum-stability": "dev",
++  "support": {
++    "issues": "https://www.drupal.org/project/issues/coffee_shop",
++    "source": "http://cgit.drupalcode.org/coffee_shop"
++  },
++  "require": { }
++}
+diff --git a/modules/custom/coffee_shop/templates/coffee-shop.html.twig b/modules/custom/coffee_shop/templates/coffee-shop.html.twig
+new file mode 100644
+index 00000000..91e43c8f
+--- /dev/null
++++ b/modules/custom/coffee_shop/templates/coffee-shop.html.twig
+@@ -0,0 +1 @@
++<!-- Add you custom twig html here -->
+\ No newline at end of file
+diff --git a/modules/custom/coffee_shop/tests/src/Functional/LoadTest.php b/modules/custom/coffee_shop/tests/src/Functional/LoadTest.php
+new file mode 100644
+index 00000000..9ddc5e33
+--- /dev/null
++++ b/modules/custom/coffee_shop/tests/src/Functional/LoadTest.php
+@@ -0,0 +1,46 @@
++<?php
++
++namespace Drupal\Tests\coffee_shop\Functional;
++
++use Drupal\Core\Url;
++use Drupal\Tests\BrowserTestBase;
++
++/**
++ * Simple test to ensure that main page loads with module enabled.
++ *
++ * @group coffee_shop
++ */
++class LoadTest extends BrowserTestBase {
++
++  /**
++   * Modules to enable.
++   *
++   * @var array
++   */
++  public static $modules = ['coffee_shop'];
++
++  /**
++   * A user with permission to administer site configuration.
++   *
++   * @var \Drupal\user\UserInterface
++   */
++  protected $user;
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function setUp() {
++    parent::setUp();
++    $this->user = $this->drupalCreateUser(['administer site configuration']);
++    $this->drupalLogin($this->user);
++  }
++
++  /**
++   * Tests that the home page loads with a 200 response.
++   */
++  public function testLoad() {
++    $this->drupalGet(Url::fromRoute('<front>'));
++    $this->assertSession()->statusCodeEquals(200);
++  }
++
++}

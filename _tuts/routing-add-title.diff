@@ -1,0 +1,11 @@
+diff --git a/modules/custom/coffee_shop/coffee_shop.routing.yml b/modules/custom/coffee_shop/coffee_shop.routing.yml
+index 8d791ea1..f76b8eab 100644
+--- a/modules/custom/coffee_shop/coffee_shop.routing.yml
++++ b/modules/custom/coffee_shop/coffee_shop.routing.yml
+@@ -3,5 +3,6 @@ coffee_shop.coffee.brew:
+   defaults:
+     _controller: Drupal\coffee_shop\Controller\CoffeeController::brewCoffee
+     type: coffee
++    _title: 'Brew some coffee!'
+   requirements:
+     _permission: 'access content'

@@ -1,0 +1,119 @@
+diff --git a/composer.json b/composer.json
+index 3e0d35f0..f710249a 100644
+--- a/composer.json
++++ b/composer.json
+@@ -7,7 +7,8 @@
+         "composer/installers": "^1.0.24",
+         "wikimedia/composer-merge-plugin": "^1.4",
+         "drupal/console": "^1.8",
+-        "drush/drush": "^9.6"
++        "drush/drush": "^9.6",
++        "drupal/devel": "^2.0"
+     },
+     "replace": {
+         "drupal/core": "^8.6"
+diff --git a/composer.lock b/composer.lock
+index 775d1ee2..9f3b4f89 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "1c17e987effd967e74bd5dc7dfce39a0",
++    "content-hash": "0ca9924a93671fdef58328513e80edbd",
+     "packages": [
+         {
+             "name": "alchemy/zippy",
+@@ -2012,6 +2012,91 @@
+             "description": "Drupal Console Extend Plugin",
+             "time": "2017-07-28T17:11:54+00:00"
+         },
++        {
++            "name": "drupal/devel",
++            "version": "2.0.0",
++            "source": {
++                "type": "git",
++                "url": "https://git.drupalcode.org/project/devel.git",
++                "reference": "8.x-2.0"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://ftp.drupal.org/files/projects/devel-8.x-2.0.zip",
++                "reference": "8.x-2.0",
++                "shasum": "cf5fb816f767f3cac4f2e170ab39e982d5e0698b"
++            },
++            "require": {
++                "drupal/core": "~8.0",
++                "symfony/var-dumper": "~2.7|^3"
++            },
++            "type": "drupal-module",
++            "extra": {
++                "branch-alias": {
++                    "dev-2.x": "2.x-dev"
++                },
++                "drupal": {
++                    "version": "8.x-2.0",
++                    "datestamp": "1548799380",
++                    "security-coverage": {
++                        "status": "covered",
++                        "message": "Covered by Drupal's security advisory policy"
++                    }
++                },
++                "drush": {
++                    "services": {
++                        "drush.services.yml": "^9"
++                    }
++                }
++            },
++            "notification-url": "https://packages.drupal.org/8/downloads",
++            "license": [
++                "GPL-2.0+"
++            ],
++            "authors": [
++                {
++                    "name": "Moshe Weitzman",
++                    "homepage": "https://github.com/weitzman",
++                    "email": "weitzman@tejasa.com",
++                    "role": "Maintainer"
++                },
++                {
++                    "name": "Hans Salvisberg",
++                    "homepage": "https://www.drupal.org/u/salvis",
++                    "email": "drupal@salvisberg.com",
++                    "role": "Maintainer"
++                },
++                {
++                    "name": "Luca Lusso",
++                    "homepage": "https://www.drupal.org/u/lussoluca",
++                    "role": "Maintainer"
++                },
++                {
++                    "name": "Marco (willzyx)",
++                    "homepage": "https://www.drupal.org/u/willzyx",
++                    "role": "Maintainer"
++                },
++                {
++                    "name": "See contributors",
++                    "homepage": "https://www.drupal.org/node/3236/committers"
++                },
++                {
++                    "name": "salvis",
++                    "homepage": "https://www.drupal.org/user/82964"
++                },
++                {
++                    "name": "willzyx",
++                    "homepage": "https://www.drupal.org/user/1043862"
++                }
++            ],
++            "description": "Various blocks, pages, and functions for developers.",
++            "homepage": "http://drupal.org/project/devel",
++            "support": {
++                "source": "http://cgit.drupalcode.org/devel",
++                "issues": "http://drupal.org/project/devel",
++                "irc": "irc://irc.freenode.org/drupal-contribute"
++            }
++        },
+         {
+             "name": "drush/drush",
+             "version": "9.6.1",

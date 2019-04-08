@@ -1,0 +1,37 @@
+diff --git a/modules/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/coffee_shop/coffee_shop.services.yml
+index c9f9cf13..38d3bfdd 100644
+--- a/modules/custom/coffee_shop/coffee_shop.services.yml
++++ b/modules/custom/coffee_shop/coffee_shop.services.yml
+@@ -5,6 +5,6 @@ services:
+ 
+   coffee_shop.coffee_drinker_subscriber:
+     class: Drupal\coffee_shop\EventSubscriber\CoffeeDrinkerSubscriber
+-    arguments: []
++    arguments: ['@messenger']
+     tags:
+       - { name: event_subscriber }
+diff --git a/modules/custom/coffee_shop/src/EventSubscriber/CoffeeDrinkerSubscriber.php b/modules/custom/coffee_shop/src/EventSubscriber/CoffeeDrinkerSubscriber.php
+index 551dc5ee..bbb25fd9 100644
+--- a/modules/custom/coffee_shop/src/EventSubscriber/CoffeeDrinkerSubscriber.php
++++ b/modules/custom/coffee_shop/src/EventSubscriber/CoffeeDrinkerSubscriber.php
+@@ -2,12 +2,19 @@
+ 
+ namespace Drupal\coffee_shop\EventSubscriber;
+ 
++use Drupal\Core\Messenger\MessengerInterface;
+ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+ 
+ class CoffeeDrinkerSubscriber implements EventSubscriberInterface {
++  private $messenger;
++
++  public function __construct(MessengerInterface $messenger) {
++    $this->messenger = $messenger;
++  }
++
+   public function onKernelRequest()
+   {
+-    drupal_set_message('Good morning request! Time for some coffee!');
++    $this->messenger->addStatus('Good morning request! Time for some coffee!');
+   }
+ 
+   public static function getSubscribedEvents() {

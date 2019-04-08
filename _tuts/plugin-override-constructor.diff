@@ -1,0 +1,14 @@
+diff --git a/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php b/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php
+index a4a7da34..97cf0e82 100644
+--- a/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php
++++ b/modules/custom/coffee_shop/src/Plugin/Block/CoffeeBlock.php
+@@ -15,6 +15,9 @@
+  * )
+  */
+ class CoffeeBlock extends BlockBase implements ContainerFactoryPluginInterface {
++  public function __construct(array $configuration, $plugin_id, $plugin_definition) {
++    parent::__construct($configuration, $plugin_id, $plugin_definition);
++  }
+ 
+   /**
+    * {@inheritdoc}
