@@ -1,4 +1,4 @@
 services:
-  coffee_shop.barista:
+  Drupal\coffee_shop\Service\Barista:
     class: Drupal\coffee_shop\Service\Barista
     arguments: ['@config.factory']
