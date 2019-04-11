@@ -1,4 +1,3 @@
 services:
   Drupal\coffee_shop\Service\Barista:
-    class: Drupal\coffee_shop\Service\Barista
     arguments: ['@config.factory']
