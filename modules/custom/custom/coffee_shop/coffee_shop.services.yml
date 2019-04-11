@@ -1,3 +1,6 @@
 services:
   Drupal\coffee_shop\Service\Barista:
-    arguments: ['@config.factory']
+    arguments: ['@config.factory', '@Drupal\coffee_shop\Service\CoffeeMachine']
+
+  Drupal\coffee_shop\Service\CoffeeMachine:
+    arguments: []

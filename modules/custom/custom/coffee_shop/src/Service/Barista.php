@@ -6,9 +6,11 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 
 class Barista {
   private $configFactory;
+  private $coffeeMachine;
 
-  public function __construct(ConfigFactoryInterface $configFactory) {
+  public function __construct(ConfigFactoryInterface $configFactory, CoffeeMachine $coffeeMachine) {
     $this->configFactory = $configFactory;
+    $this->coffeeMachine = $coffeeMachine;
   }
 
   public function prepareDrink($type) {
@@ -20,10 +22,13 @@ class Barista {
 
     $template = 'A %size% %type% prepared %status%. Enjoy!';
 
+    // some pretend code
+    $message = $this->coffeeMachine->brew();
+
     return strtr($template, [
       '%size%' => $sizes[array_rand($sizes)],
       '%type%' => $type,
       '%status%' => $statuses[array_rand($statuses)],
-    ]);
+    ]).' The coffee machine says: '.$message;
   }
 }
