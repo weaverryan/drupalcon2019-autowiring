@@ -12,3 +12,6 @@ services:
     autowire: true
     arguments:
       $numberOfScoops: 3
+
+  Drupal\Core\Config\ConfigFactoryInterface:
+    alias: 'config.factory'
