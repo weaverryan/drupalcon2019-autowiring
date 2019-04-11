@@ -5,4 +5,7 @@ services:
 #  _defaults:
 #    autowire: true
 
-# just crickets here!
+  Drupal\coffee_shop\Service\CoffeeMachine:
+    autowire: true
+    arguments:
+      $numberOfScoops: 3
