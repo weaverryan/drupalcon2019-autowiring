@@ -1,6 +1,7 @@
 services:
   Drupal\coffee_shop\Service\Barista:
-    arguments: ['@config.factory', '@Drupal\coffee_shop\Service\CoffeeMachine']
+    arguments: []
+    autowire: true
 
   Drupal\coffee_shop\Service\CoffeeMachine:
     arguments: []
