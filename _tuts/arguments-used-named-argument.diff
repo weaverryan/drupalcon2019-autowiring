@@ -1,12 +1,15 @@
 diff --git a/modules/custom/custom/coffee_shop/coffee_shop.services.yml b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
-index 37f1de2d..31a8485f 100644
+index ed05c68e..47e9d7e3 100644
 --- a/modules/custom/custom/coffee_shop/coffee_shop.services.yml
 +++ b/modules/custom/custom/coffee_shop/coffee_shop.services.yml
-@@ -5,3 +5,6 @@ services:
+@@ -5,4 +5,7 @@ services:
  #  _defaults:
  #    autowire: true
  
+-# just crickets here!
+\ No newline at end of file
 +  Drupal\coffee_shop\Service\CoffeeMachine:
++    autowire: true
 +    arguments:
 +      $numberOfScoops: 3
 diff --git a/modules/custom/custom/coffee_shop/src/Service/CoffeeMachine.php b/modules/custom/custom/coffee_shop/src/Service/CoffeeMachine.php
